@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageUsersController">
+   <children>
+      <Label layoutX="210.0" layoutY="26.0" text="Manage Users">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnHome_OnAction" prefHeight="40.0" prefWidth="131.0" text="Home" />
+      <Button layoutX="497.0" layoutY="30.0" mnemonicParsing="false" text="New User +" />
+      <TextField layoutX="24.0" layoutY="82.0" prefHeight="28.0" prefWidth="562.0" promptText="Enter the name" />
+      <TextField layoutX="24.0" layoutY="118.0" prefHeight="28.0" prefWidth="562.0" promptText="Enter the contact number" />
+      <TextField layoutX="24.0" layoutY="156.0" prefHeight="28.0" prefWidth="562.0" promptText="Enter the e-mail" />
+      <TextField layoutX="24.0" layoutY="192.0" prefHeight="28.0" prefWidth="562.0" promptText="Enter the username" />
+      <TextField fx:id="txtPasswordShow" layoutX="24.0" layoutY="230.0" prefHeight="28.0" prefWidth="562.0" promptText="Enter the password" />
+      <PasswordField fx:id="txtPasswordHide" layoutX="24.0" layoutY="230.0" prefHeight="28.0" prefWidth="562.0" promptText="Enter the password" />
+      <ImageView fx:id="imgPasswordShowHide" fitHeight="36.0" fitWidth="36.0" layoutX="550.0" layoutY="227.0" onMouseClicked="#imgPasswordShowHide_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/password-show.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ComboBox fx:id="cmbUserRole" layoutX="24.0" layoutY="271.0" prefHeight="28.0" prefWidth="562.0" promptText="Select User Role" />
+      <ComboBox fx:id="cmbUserLocation" layoutX="24.0" layoutY="311.0" prefHeight="28.0" prefWidth="562.0" />
+      <Pane fx:id="pne1" layoutX="24.0" layoutY="349.0">
+         <children>
+            <TableView fx:id="tblUsers" layoutY="68.0" prefHeight="200.0" prefWidth="562.0">
+              <columns>
+                <TableColumn prefWidth="97.0" text="Username" />
+                <TableColumn prefWidth="148.0" text="Name" />
+                  <TableColumn maxWidth="120.0" minWidth="-1.0" prefWidth="120.0" text="Role" />
+                  <TableColumn prefWidth="111.0" text="Remove" />
+              </columns>
+            </TableView>
+            <TextField layoutY="40.0" prefHeight="28.0" prefWidth="562.0" promptText="Filter by Username or Name" />
+            <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="73.0" text="Save" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="32.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/home.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
