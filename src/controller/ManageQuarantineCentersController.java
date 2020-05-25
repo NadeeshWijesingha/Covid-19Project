@@ -302,6 +302,4 @@ public class ManageQuarantineCentersController {
         primaryStage.centerOnScreen();
 
     }
-
-    // TODO: 5/18/2020 "Validation and Search"
 }

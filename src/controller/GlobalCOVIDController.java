@@ -114,6 +114,7 @@ public class GlobalCOVIDController {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
     }
 
     public void imgHome_OnAction(MouseEvent mouseEvent) throws IOException {
