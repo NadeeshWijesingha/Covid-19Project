@@ -1,27 +1,26 @@
 package util;
 
-import javafx.scene.control.Button;
-
 public class UserTM {
-    private String username;
+
     private String name;
-    private Button delete;
+    private String contact;
+    private String mail;
+    private String username;
+    private String password;
+    private String role;
+    private String selection;
 
     public UserTM() {
     }
 
-    public UserTM(String username, String name, Button delete) {
-        this.username = username;
+    public UserTM(String name, String contact, String mail, String username, String password, String role, String selection) {
         this.name = name;
-        this.delete = delete;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
+        this.contact = contact;
+        this.mail = mail;
         this.username = username;
+        this.password = password;
+        this.role = role;
+        this.selection = selection;
     }
 
     public String getName() {
@@ -32,20 +31,64 @@ public class UserTM {
         this.name = name;
     }
 
-    public Button getDelete() {
-        return delete;
+    public String getContact() {
+        return contact;
     }
 
-    public void setDelete(Button delete) {
-        this.delete = delete;
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getSelection() {
+        return selection;
+    }
+
+    public void setSelection(String selection) {
+        this.selection = selection;
     }
 
     @Override
     public String toString() {
         return "UserTM{" +
-                "username='" + username + '\'' +
-                ", name='" + name + '\'' +
-                ", delete=" + delete +
+                "name='" + name + '\'' +
+                ", contact='" + contact + '\'' +
+                ", mail='" + mail + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", selection='" + selection + '\'' +
                 '}';
     }
 }

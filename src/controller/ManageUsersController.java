@@ -37,6 +37,12 @@ public class ManageUsersController {
     public TableColumn clmRemove;
     public JFXTextField txtSearch;
 
+    public void initialize(){
+
+
+
+    }
+
     public void btnAddNew_OnAction(ActionEvent actionEvent) {
     }
 
