@@ -1,0 +1,74 @@
+create schema covid19db collate utf8mb4_0900_ai_ci;
+
+create table camp
+(
+	camp_id varchar(10) not null
+		primary key,
+	camp_name varchar(50) not null,
+	camp_city varchar(50) not null,
+	camp_district varchar(50) not null,
+	camp_capacity int not null,
+	head_name varchar(50) not null,
+	head_contact varchar(15) not null,
+	camp_contact varchar(15) not null,
+	camp_email varchar(50) not null
+);
+
+create table global_info
+(
+	date_today date not null
+		primary key,
+	confirmed_cases int not null,
+	recovered int null,
+	deaths int null
+);
+
+create table hospital
+(
+	hos_id varchar(10) not null
+		primary key,
+	hos_name varchar(50) not null,
+	hos_city varchar(50) not null,
+	hos_district varchar(50) not null,
+	hos_capacity int not null,
+	director_name varchar(50) not null,
+	director_contact varchar(15) not null,
+	hos_contact varchar(15) not null,
+	hos_email varchar(50) not null
+);
+
+create table user
+(
+	username varchar(10) not null,
+	contact_nu int not null,
+	email varchar(50) not null,
+	name varchar(50) not null,
+	password varchar(50) not null,
+	`roll name` varchar(50) not null,
+	district int null,
+	constraint User_username_uindex
+		unique (username)
+);
+
+alter table user
+	add primary key (username);
+
+create table user_camp
+(
+	use_name varchar(10) null,
+	quarantine_camp_id varchar(10) null,
+	constraint camp_fk
+		foreign key (quarantine_camp_id) references camp (camp_id),
+	constraint user_name_camp_fk
+		foreign key (use_name) references user (username)
+);
+
+create table user_hos
+(
+	user_name varchar(10) null,
+	hospital_id varchar(10) null,
+	constraint hos_id_fk
+		foreign key (hospital_id) references hospital (hos_id),
+	constraint user_name_hos_fk
+		foreign key (user_name) references user (username)
+);
