@@ -1,50 +1,22 @@
 package util;
 
+import javafx.scene.control.Button;
+
 public class UserTM {
 
-    private String name;
-    private String contact;
-    private String mail;
     private String username;
-    private String password;
+    private String name;
     private String role;
-    private String selection;
+    private Button delete;
 
     public UserTM() {
     }
 
-    public UserTM(String name, String contact, String mail, String username, String password, String role, String selection) {
-        this.name = name;
-        this.contact = contact;
-        this.mail = mail;
+    public UserTM(String username, String name, String role, Button delete) {
         this.username = username;
-        this.password = password;
-        this.role = role;
-        this.selection = selection;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
+        this.role = role;
+        this.delete = delete;
     }
 
     public String getUsername() {
@@ -55,12 +27,12 @@ public class UserTM {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getName() {
+        return name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getRole() {
@@ -71,24 +43,21 @@ public class UserTM {
         this.role = role;
     }
 
-    public String getSelection() {
-        return selection;
+    public Button getDelete() {
+        return delete;
     }
 
-    public void setSelection(String selection) {
-        this.selection = selection;
+    public void setDelete(Button delete) {
+        this.delete = delete;
     }
 
     @Override
     public String toString() {
         return "UserTM{" +
-                "name='" + name + '\'' +
-                ", contact='" + contact + '\'' +
-                ", mail='" + mail + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                "username='" + username + '\'' +
+                ", name='" + name + '\'' +
                 ", role='" + role + '\'' +
-                ", selection='" + selection + '\'' +
+                ", delete=" + delete +
                 '}';
     }
 }
